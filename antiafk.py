@@ -270,11 +270,11 @@ def auto_row():
     keyboard.wait('.') # Wait for the user to press the '.' key
     globals()['state'] = True # Set the state to True
     while globals()['state'] == True: # While the state is True
-        keyboard.press('q') 
-        keyboard.press('d')
+        keyboard.press(default_layout[1]) # Press the Forward key
+        keyboard.press(default_layout[3]) # Press the Forward key
         sleep(1.8)
-        keyboard.release('q')
-        keyboard.release('d')
+        keyboard.release(default_layout[1]) # Press the Forward key
+        keyboard.release(default_layout[3]) # Release the Forward key
         sleep(0.6)
 
     
