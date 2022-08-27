@@ -88,7 +88,7 @@ def record():
         print(f'{Fore.LIGHTGREEN_EX}You\'ve started recording{Fore.RESET}')
         recorded = keyboard.record(until='.')
         print(f'{Fore.LIGHTGREEN_EX}You\'ve recorded {Fore.LIGHTBLUE_EX}{recorded}{Fore.RESET}')
-        # print(recorded)
+        print(recorded)
         while True:
             keyboard.play(recorded)
 
@@ -143,12 +143,12 @@ def sot():
             print(f'{Fore.LIGHTBLUE_EX}Press {Fore.LIGHTGREEN_EX}"."{Fore.LIGHTBLUE_EX} launch the bot{Fore.RESET}')
             jump()
             globals()['state'] = False
-        # case '4':
-        #     # Do stuff for Auto-Row
-        #     print(f'{Fore.LIGHTBLUE_EX}You have chosen Auto-Row{Fore.RESET}')
-        #     print(f'{Fore.LIGHTBLUE_EX}Press {Fore.LIGHTGREEN_EX}"."{Fore.LIGHTBLUE_EX} launch the bot{Fore.RESET}')
-        #     auto_row()
-        #     globals()['state'] = False
+        case '4':
+            # Do stuff for Auto-Row
+            print(f'{Fore.LIGHTBLUE_EX}You have chosen Auto-Row{Fore.RESET}')
+            print(f'{Fore.LIGHTBLUE_EX}Press {Fore.LIGHTGREEN_EX}"."{Fore.LIGHTBLUE_EX} launch the bot{Fore.RESET}')
+            auto_row()
+            globals()['state'] = False
         case '5':
             # Do stuff for Walking Around
             print(f'{Fore.LIGHTBLUE_EX}You have chosen Walking Around{Fore.RESET}')
@@ -265,6 +265,19 @@ def run_with_item_on_hand():
         keyboard.press('x') # Press the 'x' (Drop item) key
         sleep(0.1) # Wait 0.1 seconds
         keyboard.release('x') # Release the 'x' key
+
+def auto_row():
+    keyboard.wait('.') # Wait for the user to press the '.' key
+    globals()['state'] = True # Set the state to True
+    while globals()['state'] == True: # While the state is True
+        keyboard.press('q') 
+        keyboard.press('d')
+        sleep(1.8)
+        keyboard.release('q')
+        keyboard.release('d')
+        sleep(0.6)
+
+    
 
 #Detect ctrl+c
 try:
