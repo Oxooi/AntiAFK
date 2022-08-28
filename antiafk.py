@@ -118,8 +118,7 @@ def sot():
         f'{Fore.LIGHTCYAN_EX}[2] {Fore.LIGHTBLUE_EX}Left & Right{Fore.RESET}')
     print(f'{Fore.LIGHTCYAN_EX}[3] {Fore.LIGHTBLUE_EX}Jump{Fore.RESET}')
     print(f'{Fore.LIGHTCYAN_EX}[4] {Fore.LIGHTBLUE_EX}Auto-Row{Fore.RESET}')
-    print(f'{Fore.LIGHTCYAN_EX}[5] {Fore.LIGHTBLUE_EX}Walk Around{Fore.RESET}')
-    print(f'{Fore.LIGHTCYAN_EX}[6] {Fore.LIGHTBLUE_EX}Run with item on hand{Fore.RESET}')
+    print(f'{Fore.LIGHTCYAN_EX}[5] {Fore.LIGHTBLUE_EX}Run with item on hand{Fore.RESET}')
     print(f'{Fore.LIGHTCYAN_EX}[0] {Fore.LIGHTRED_EX}Exit{Fore.RESET}')
     print('\n')
     choice = input('Enter your choice : ')
@@ -150,12 +149,6 @@ def sot():
             auto_row()
             globals()['state'] = False
         case '5':
-            # Do stuff for Walking Around
-            print(f'{Fore.LIGHTBLUE_EX}You have chosen Walking Around{Fore.RESET}')
-            print(f'{Fore.LIGHTBLUE_EX}Press {Fore.LIGHTGREEN_EX}"."{Fore.LIGHTBLUE_EX} launch the bot{Fore.RESET}')
-            walk_around()
-            globals()['state'] = False
-        case '6':
             # Do stuff for Run with item on hand
             print(f'{Fore.LIGHTBLUE_EX}You have chosen Run with item on hand{Fore.RESET}')
             print(f'{Fore.LIGHTBLUE_EX}Press {Fore.LIGHTGREEN_EX}"."{Fore.LIGHTBLUE_EX} launch the bot{Fore.RESET}')
@@ -200,59 +193,6 @@ def jump():
     while globals()['state'] == True:
         keyboard.press('space')
         sleep(0.5)
-       
-def walk_around():
-    keyboard.wait('.')
-    globals()['state'] = True
-    while globals()['state'] == True:
-        keyboard.press(default_layout[0])
-        sleep(0.5)
-        keyboard.release(default_layout[0])
-        sleep(0.5)
-        keyboard.press(default_layout[1])
-        sleep(0.5)
-        keyboard.release(default_layout[1])
-        sleep(0.5)
-        keyboard.press(default_layout[2])
-        sleep(0.5)
-        keyboard.release(default_layout[2])
-        sleep(0.5)
-        keyboard.press(default_layout[3])
-        sleep(0.5)
-        keyboard.release(default_layout[3])
-        sleep(0.5)
-        keyboard.press('space')
-        sleep(0.5)
-        keyboard.release('space')
-        sleep(0.5)
-        keyboard.press(default_layout[0])
-        sleep(0.5)
-        keyboard.release(default_layout[0])
-        sleep(0.5)
-        keyboard.press(default_layout[1])
-        sleep(0.5)
-        keyboard.release(default_layout[1])
-        sleep(0.5)
-        keyboard.press(default_layout[2])
-        sleep(0.5)
-        keyboard.release(default_layout[2])
-        sleep(0.5)
-        keyboard.press(default_layout[3])
-        sleep(0.5)
-        keyboard.release(default_layout[3])
-        sleep(0.5)
-        keyboard.press('space')
-        sleep(0.5)
-        keyboard.release('space')
-        sleep(0.5)
-        keyboard.press(default_layout[0])
-        sleep(0.5)
-        keyboard.release(default_layout[0])
-        sleep(0.5)
-        keyboard.press(default_layout[1])
-        sleep(0.5)
-        keyboard.release(default_layout[1])
-        sleep(0.5)
 
 def run_with_item_on_hand():
     keyboard.wait('.') # Wait for the user to press the '.' key
@@ -285,6 +225,4 @@ try:
 except KeyboardInterrupt:
     print(f'\n{Fore.LIGHTRED_EX}See yu :]{Fore.RESET}')
     sleep(1)
-    # main()
-    # sot()
     sys.exit()
